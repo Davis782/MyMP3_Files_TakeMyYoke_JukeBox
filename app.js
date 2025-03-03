@@ -139,17 +139,17 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
         };
 
         const musicFolders = [
-            { 
+            {
                 name: 'song1',
                 mediaFile: { path: 'mp3_files/song1/song1.mp3' },
                 contentFile: { path: 'mp3_files/song1/lyrics.txt' }
             },
-            { 
+            {
                 name: 'song2',
                 mediaFile: { path: 'mp3_files/song2/song2.mp3' },
                 contentFile: { path: 'mp3_files/song2/lyrics.txt' }
             },
-            { 
+            {
                 name: 'song3',
                 mediaFile: { path: 'mp3_files/song3/song3.mp3' },
                 contentFile: { path: 'mp3_files/song3/lyrics.txt' }
@@ -157,17 +157,17 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
         ];
 
         const pictureFolders = [
-            { 
+            {
                 name: 'picture1',
                 mediaFile: { path: 'pictures/picture1/image.png' },
                 contentFile: { path: 'pictures/picture1/description.txt' }
             },
-            { 
+            {
                 name: 'picture2',
                 mediaFile: { path: 'pictures/picture2/image.png' },
                 contentFile: { path: 'pictures/picture2/description.txt' }
             },
-            { 
+            {
                 name: 'picture3',
                 mediaFile: { path: 'pictures/picture3/image.png' },
                 contentFile: { path: 'pictures/picture3/description.txt' }
@@ -229,7 +229,7 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
 
         return (
             <div className="container mx-auto px-4" data-name="app-container">
-                <button 
+                <button
                     className="sidebar-toggle"
                     onClick={() => setIsSidebarOpen(true)}
                     data-name="sidebar-toggle"
@@ -237,8 +237,8 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                     <i className="fas fa-bars"></i>
                 </button>
 
-                <Sidebar 
-                    isOpen={isSidebarOpen} 
+                <Sidebar
+                    isOpen={isSidebarOpen}
                     onClose={() => setIsSidebarOpen(false)}
                 />
 
@@ -249,7 +249,7 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                     </div>
                 )}
 
-                <Navigation 
+                <Navigation
                     currentPage={currentPage}
                     pages={pages}
                     mediaType={currentPage === 'music' ? 'Song' : 'Picture'}
@@ -257,7 +257,7 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                     onPageChange={handlePageChange}
                     onMediaChange={handleFolderChange}
                 />
-                
+
                 <div className="mt-8" data-name="content-container">
                     {selectedFolder && currentPage === 'music' && (
                         <div data-name="music-player-container">
@@ -270,8 +270,8 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                                 />
                                 <label htmlFor="autoplay">Enable Autoplay</label>
                             </div>
-                            <AudioPlayer 
-                                audioFile={musicFolders.find(f => f.name === selectedFolder)?.mediaFile.path} 
+                            <AudioPlayer
+                                audioFile={musicFolders.find(f => f.name === selectedFolder)?.mediaFile.path}
                                 onTimeUpdate={(time) => console.log('Current time:', time)}
                                 isAutoplayEnabled={isAutoplayEnabled}
                                 onSongEnd={handleSongEnd}
@@ -279,11 +279,11 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                             {content && <ContentViewer content={content} />}
                         </div>
                     )}
-                    
+
                     {selectedFolder && currentPage === 'pictures' && (
                         <div data-name="picture-viewer-container">
-                            <ImageViewer 
-                                imagePath={pictureFolders.find(f => f.name === selectedFolder)?.mediaFile.path} 
+                            <ImageViewer
+                                imagePath={pictureFolders.find(f => f.name === selectedFolder)?.mediaFile.path}
                             />
                             {content && <ContentViewer content={content} />}
                         </div>
@@ -292,14 +292,14 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
                     <DonationButton cashAppUsername={cashAppUsername} />
                 </div>
 
-                <PaymentModal 
+                <PaymentModal
                     isOpen={showPaymentModal}
                     onClose={handlePaymentComplete}
                     onSkip={handlePaymentSkip}
                     cashAppUsername={cashAppUsername}
                 />
 
-                <a 
+                <a
                     href="https://gamma.app/docs/Interactive-Media-Player-and-Image-Carousel-hzry2ujorx6w4al/preview?mode=doc"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -318,5 +318,5 @@ A mesmerizing capture of a hidden waterfall in the heart of Olympic National Par
     }
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+
+
